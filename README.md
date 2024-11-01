@@ -1,2 +1,1 @@
-# powerplatform
-Showcases a collection of projects completed using Microsoft Power Platform, including Power Apps, Power Automate, and Power BI. Each project demonstrates solutions developed to streamline real business processes.
+This page demonstrates a few examples of applications I have developed in my career, outlining the requirements, solutioning and what the final end product looked like.

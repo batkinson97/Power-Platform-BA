@@ -1,0 +1,2 @@
+name: Power Platform
+theme: minima

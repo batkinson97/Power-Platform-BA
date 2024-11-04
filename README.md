@@ -1,7 +1,7 @@
 # Ben Atkinson - Power Platform Applications
 This page demonstrates a few examples of applications I have developed in my career, outlining the requirements, solutioning and what the final end product looked like.
 
-![Landing Page of Power Apps Application](docs/assets/images/Landing_page.png)
+![Landing Page of Power Apps Application](docs/assets/images/Landing_Page.png)
 
 ![Project Selection Screen showing high level metrics](docs/assets/images/Project_Screen_2.png)
 

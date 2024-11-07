@@ -14,9 +14,9 @@ The data model was simple - each of the modules within the application had it's 
 ### Landing Page
 The landing page was a simple design displaying an image of a construction site and a small blurb describing the applications purpose. A small box with the users full name was created using the code below:
 
- ```bash
+```YAML
     User().FullName
-    ```
+```
 
 This helps create a personal experience within the application and a validation for the user to confirm that they have been logged in correctly.
 

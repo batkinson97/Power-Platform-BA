@@ -1,6 +1,0 @@
-* text=auto
-* text eol=lf
-*.png binary
-
-git rm --cached -r .
-git add -A

@@ -17,6 +17,7 @@ The landing page was a simple design displaying an image of a construction site 
  ```bash
     User().FullName
     ```
+
 This helps create a personal experience within the application and a validation for the user to confirm that they have been logged in correctly.
 
 ![Landing Page of Power Apps Application](docs/assets/images/Landing_Page.png)

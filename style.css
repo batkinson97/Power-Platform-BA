@@ -11,19 +11,19 @@ body {
 h1 {
     font-family: Arial, Helvetica,  sans-serif;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 h2 {
     font-family: Arial, Helvetica,  sans-serif;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 h3 {
     font-family: Arial, Helvetica,  sans-serif;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
 }
 
 p {
@@ -41,7 +41,7 @@ p {
 }
 
 .banner {
-    background-color: #ff7e5f;
+    background-color: #000000;
     color: white;
     padding: 20px;
     text-align: center;
@@ -56,69 +56,21 @@ p {
 .banner h1 {
     margin: 0;
     font-size: 2em;
+    color: white;
 }
 
 .banner p {
     margin: 5px 0 0;
     font-size: 1.2em;
+    color: white;
 }
 
 body {
-    padding-top: 150px; /* Adjust this value based on the height of your banner */
+    padding-top: 125px; /* Adjust this value based on the height of your banner */
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-}
-
-/* Animations and Transitions */
-.button {
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #ff7e5f;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 2s ease-in;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Interactive Elements */
-a:hover, a:focus {
-    color: #feb47b;
-    text-decoration: underline;
-}
-
-.button:focus {
-    outline: 2px solid #ff7e5f;
-}
-
-.footer {
-    background-color: #ff7e5f;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    left: 0;
 }

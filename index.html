@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power Platform Applications</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background: linear-gradient(to right, #ff7e5f, #feb47b);
             color: #fff;
         }
@@ -20,69 +23,6 @@
         p {
             font-size: 1.1em;
             color: #333;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            width: 100%;
-            margin: 0 auto;
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        .section {
-            background: url('background.jpg') no-repeat center center/cover;
-        }
-        .button {
-            transition: background-color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #ff7e5f;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .fade-in {
-            animation: fadeIn 2s ease-in;
-        }
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-        }
-        a:hover, a:focus {
-            color: #feb47b;
-            text-decoration: underline;
-        }
-        .button:focus {
-            outline: 2px solid #ff7e5f;
-        }
-        .card {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #fff;
-            padding: 40px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .modal.active {
-            display: block;
         }
         .navbar {
             display: flex;
@@ -99,6 +39,18 @@
         .navbar a:hover {
             background: #444;
         }
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #333;
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .scroll-button a {
+            color: #fff;
+            font-size: 20px;
+        }
         .hero {
             background: url('hero.jpg') no-repeat center center/cover;
             height: 400px;
@@ -110,6 +62,22 @@
         }
         .hero h1 {
             font-size: 3em;
+        }
+        .container {
+            padding: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            color: #333;
         }
         .footer {
             background: #333;
@@ -123,55 +91,103 @@
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+    <!-- Move to up button -->
+    <div class="scroll-button">
+        <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
-
-    <div class="hero">
-        <h1>Power Platform Applications</h1>
-    </div>
-
-    <div class="container">
-        <h3>This page demonstrates a few examples of applications I have developed in my career, outlining the requirements, solutioning and what the final end product looked like.</h3>
-
-        <h2>Housing Delivery Programme Application</h2>
-        <h3>Context & Requirements</h3>
-        <p>The client required a unified solution to manage housing delivery project information that could be accessed by users across the business at no additional ongoing costs. This would be accessed by both technical and non-technical users and should be simply designed.</p>
-
-        <h3>Solution</h3>
-        <p>I developed the front-end using Power Apps canvas apps to create a personalised application for the client that was intuitive to use. This included risks, issues, number of homes, milestones & status updates. Due to the application only being used by internal users I was able to manage authentication by creating a new Microsoft Environment and connecting this to SharePoint to import the security groups from there. This ensures that the security roles are consistent across the entire solution and changes to role permissions can be done on a single platform. As there were cost limitations to the project, SharePoint was used as the data source for the application as this is included within the standard Microsoft license.</p>
-        <p>The data model was simple - each of the modules within the application had its own SharePoint list. The relationship between each of the lists was managed using a ProjectID - an auto-generated ID created using Microsoft Automate that was triggered any time a new project was created within the application. It was extremely unlikely that the number of records in any of the lists would exceed 5000 which meant SharePoint could easily handle the volume of data being stored.</p>
-        <p>The development was managed by integrating the application with Azure DevOps. This enabled multiple developers to work on the application at any one time (a significant limitation to using Power Apps) and helped accelerate the delivery of the solution.</p>
-
-        <p><em>Any references to the client name and any information that could be used to identify the client has been removed from the application screenshots to ensure client confidentiality.</em></p>
-
-        <h3>Landing Page</h3>
-        <p>The landing page was a simple design displaying an image of a construction site and a small blurb describing the application's purpose. A small box with the user's full name was created using the code below:</p>
-
-        <pre><code>
-        User().FullName
-        </code></pre>
-
-        <p>This helps create a personal experience within the application and a validation for the user to confirm that they have been logged in correctly.</p>
-
-        <div class="grid-container">
-            <img src="docs/assets/images/Landing_Page.png" alt="Landing Page of Power Apps Application" class="card">
-            <img src="docs/assets/images/Project_Screen_2.png" alt="Project Selection Screen showing high level metrics" class="card">
-            <img src="docs/assets/images/Project_Landing_Page.png" alt="Module Selection Screen" class="card">
-            <img src="docs/assets/images/Risks.png" alt="Risks structured in a scrollable container with headings" class="card">
-            <img src="docs/assets/images/New_Risk.png" alt="Add a new risk" class="card">
-            <img src="docs/assets/images/Issues.png" alt="Issues structured in a scrollable container with headings" class="card">
-            <img src="docs/assets/images/Homes.png" alt="Number of homes to be built with baselines and tenure type" class="card">
-            <img src="docs/assets/images/Milestones.png" alt="Project Stages with milestones and completion baselines" class="card">
-            <img src="docs/assets/images/Reporting.png" alt="Reporting Module for status updates" class="card">
+    <!-- Navigation menu -->
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="#">Portfolio.</a></div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <div class="cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </ul>
         </div>
-    </div>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
 
-    <div class="footer">
-        <p>© 2024 Power Platform Applications. All rights reserved.</p>
-    </div>
+    <!-- About Section Start -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="title"><span>About Me</span></div>
+            <div class="about-details">
+                <div class="left">
+                    <img src="images/about.png" alt="About Me">
+                </div>
+                <div class="right">
+                    <div class="topic">Integration Is My Passion</div>
+                    <p>Welcome to the **Project Name** repository! This project aims to solve [specific problem] by providing [solution]. Below you'll find detailed information about the project, including setup instructions, usage guidelines, and contribution details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section Start -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Housing Delivery Programme Application</h2>
+            <h3>Context & Requirements</h3>
+            <p>The client required a unified solution to manage housing delivery project information that could be accessed by users across the business at no additional ongoing costs. This would be accessed by both technical and non-technical users and should be simply designed.</p>
+
+            <h3>Solution</h3>
+            <p>I developed the front-end using Power Apps canvas apps to create a personalised application for the client that was intuitive to use. This included risks, issues, number of homes, milestones & status updates. Due to the application only being used by internal users I was able to manage authentication by creating a new Microsoft Environment and connecting this to SharePoint to import the security groups from there. This ensures that the security roles are consistent across the entire solution and changes to role permissions can be done on a single platform. As there were cost limitations to the project, SharePoint was used as the data source for the application as this is included within the standard Microsoft license.</p>
+            <p>The data model was simple - each of the modules within the application had its own SharePoint list. The relationship between each of the lists was managed using a ProjectID - an auto-generated ID created using Microsoft Automate that was triggered any time a new project was created within the application. It was extremely unlikely that the number of records in any of the lists would exceed 5000 which meant SharePoint could easily handle the volume of data being stored.</p>
+            <p>The development was managed by integrating the application with Azure DevOps. This enabled multiple developers to work on the application at any one time (a significant limitation to using Power Apps) and helped accelerate the delivery of the solution.</p>
+
+            <p><em>Any references to the client name and any information that could be used to identify the client has been removed from the application screenshots to ensure client confidentiality.</em></p>
+
+            <h3>Landing Page</h3>
+            <p>The landing page was a simple design displaying an image of a construction site and a small blurb describing the application's purpose. A small box with the user's full name was created using the code below:</p>
+
+            <pre><code>
+            User().FullName
+            </code></pre>
+
+            <p>This helps create a personal experience within the application and a validation for the user to confirm that they have been logged in correctly.</p>
+
+            <div class="grid-container">
+                <img src="docs/assets/images/Landing_Page.png" alt="Landing Page of Power Apps Application" class="card">
+                <img src="docs/assets/images/Project_Screen_2.png" alt="Project Selection Screen showing high level metrics" class="card">
+                <img src="docs/assets/images/Project_Landing_Page.png" alt="Module Selection Screen" class="card">
+                <img src="docs/assets/images/Risks.png" alt="Risks structured in a scrollable container with headings" class="card">
+                <img src="docs/assets/images/New_Risk.png" alt="Add a new risk" class="card">
+                <img src="docs/assets/images/Issues.png" alt="Issues structured in a scrollable container with headings" class="card">
+                <img src="docs/assets/images/Homes.png" alt="Number of homes to be built with baselines and tenure type" class="card">
+                <img src="docs/assets/images/Milestones.png" alt="Project Stages with milestones and completion baselines" class="card">
+                <img src="docs/assets/images/Reporting.png" alt="Reporting Module for status updates" class="card">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section Start -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="title"><span>Contact Me</span></div>
+            <div class="text">
+                <div class="topic">Have Any Project?</div>
+                <p>Why wait, let's plan to connect. Connection and community improve engagement, retention, and well-being.</p>
+                <div class="button">
+                    <a class="fcc-btn" href="https://www.linkedin.com/in/kapil0123/">Let's Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <div class="text">
+            <span>Created By <a href="#">Kapil</a> | © 2022 All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

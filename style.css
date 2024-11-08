@@ -2,16 +2,18 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
+    margin: 8;
+    padding: 8;
     width: 100%;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background-color: lightblue;
+    opacity: 0.2;
     color: #fff;
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    text-align:center;
 }
 
 p {
@@ -26,6 +28,34 @@ p {
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
+}
+
+.banner {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.banner h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.banner p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+body {
+    padding-top: 80px; /* Adjust this value based on the height of your banner */
 }
 
 .grid-container {

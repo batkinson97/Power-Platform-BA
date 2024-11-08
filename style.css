@@ -2,18 +2,16 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
-    margin: 8;
-    padding: 8;
-    width: 100%;
-    background-color: lightblue;
-    opacity: 0.2;
-    color: #fff;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f7ff; /* Very light blue background */
+    color: #000; /* Black text */
 }
 
 h1, h2, h3 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
 }
 
 p {
@@ -42,7 +40,6 @@ p {
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .banner h1 {
     margin: 0;
@@ -130,4 +127,15 @@ a:hover, a:focus {
 
 .modal.active {
     display: block;
+}
+
+.footer {
+    background-color: #ff7e5f;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
 }

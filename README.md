@@ -30,7 +30,7 @@ This screen contains a scrollable horizontal container with key fields relating 
 ![Risks structured in a scrollable container with headings](docs/assets/images/Risks.png)
 
 ### Add a New Risk
-This shows an example form input for adding a new risk. Some fields are auto-populated, some are generated using live formulas, and some are determined using a scoring matrix.
+This shows an example form input for adding a new risk. Some fields are auto-populated, some are generated using live formulas, and some are determined using a scoring matrix. Any time a new risk is created an automated email notification is sent to the project manager.
 
 ![Add a new risk](docs/assets/images/New_Risk.png)
 
@@ -44,11 +44,19 @@ The homes screen is formatted as a table view to enable users to easily edit acr
 
 - Original baseline is only editable once i.e. once this has been set it cannot be changed.
 - Current baseline can be edited by a select number of users under the 'admin' security role.
-- Forecast can be changed by all users and will trigger a change request if the change is outside the allowed thresholds of the current baseline. If the change request is approved by an admin then the value entered here will be used as the new current baseline.
+- Forecast can be changed by all users and will trigger a change request in Power Automate if the change is outside the allowed thresholds of the current baseline. If the change request is approved by the project manager then the value entered here will be used as the new current baseline.
 - Actual can be changed by all users and should be used to represent the number of houses that have completed development.
 
 ![Number of homes to be built with baselines and tenure type](docs/assets/images/Homes.png)
 
+### Milestones Screen
+
+Project Stages are detailed on the left with the individual milestones viewed in a gallery in the center of the screen. Once a milestone is selected a date input is required for completion dates with the editing rights configured in the same way as the homes screen.
+
 ![Project Stages with milestones and completion baselines](docs/assets/images/Milestones.png)
+
+### Reporting Screen
+
+This screen can be used to create periodic reports on project status for use in review meetings with senior stakeholders. The data source for this module is also connected to Power BI to create a one-page summarised view of key project information.
 
 ![Reporting Module for status updates](docs/assets/images/Reporting.png)

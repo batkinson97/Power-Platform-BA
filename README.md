@@ -13,13 +13,7 @@ The development was managed by integrating the application with Azure DevOps. Th
 ***Any references to the client name and any information that could be used to identify the client has been removed from the application screenshots to ensure client confidentiality.***
 
 ### Landing Page
-The landing page was a simple design displaying an image of a construction site and a small blurb describing the applications purpose. A small box with the users full name was created using the code below:
-
-```YAML
-    User().FullName
-```
-
-This helps create a personal experience within the application and a validation for the user to confirm that they have been logged in correctly.
+The landing page was a simple design displaying an image of a construction site and a small blurb describing the applications purpose. A small box with the users full name was created to help create a personal experience within the application and a validation for the user to confirm that they have been logged in correctly.
 
 ![Landing Page of Power Apps Application](docs/assets/images/Landing_Page.png)
 
